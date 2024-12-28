@@ -2,7 +2,7 @@ from time import sleep
 import pygetwindow as gw
 import pyautogui
 
-banned_words = ["elmusto", "organize", "organıze", "jeff redd", "ati242", "blok3", "heijan", "batuflex", "era7capone", "lvbel c5", "ali471", "şehinşah", "sehinsah", "motive", "deha", "ben fero", "aykut closer", "akdo", "mero", "uzi", "cıstak"]
+banned_words = ["elmusto", "organize", "organıze", "jeff redd", "ati242", "blok3", "heijan", "batuflex", "era7capone", "lvbel c5", "ali471", "şehinşah", "sehinsah", "motive", "deha", "ben fero", "aykut closer", "akdo", "mero", "uzi", "cistak", "cıstak"]
 
 def close_tabs():
     while True:
