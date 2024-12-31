@@ -1,8 +1,11 @@
 from time import sleep
 import pygetwindow as gw
 import pyautogui
+import webbrowser
 
 banned_words = ["elmusto", "organize", "organıze", "jeff redd", "ati242", "blok3", "heijan", "batuflex", "era7capone", "lvbel c5", "ali471", "şehinşah", "sehinsah", "motive", "deha", "ben fero", "aykut closer", "akdo", "mero", "uzi", "cistak", "cıstak"]
+
+url = "https://zgndia.github.io"
 
 def close_tabs():
     while True:
@@ -27,6 +30,7 @@ def close_tabs():
                 
                 # Close the window using the keyboard shortcut (e.g., Ctrl+W)
                 pyautogui.hotkey('ctrl', 'w')
+                webbrowser.open(url)
                 sleep(1)
 
             except Exception as e:
