@@ -5,7 +5,7 @@ import requests
 import json
 
 # GitHub raw URL for the banned words JSON file
-BANNED_WORDS_URL = "https://raw.githubusercontent.com/username/repository/branch/banned_words.json"
+BANNED_WORDS_URL = "https://raw.githubusercontent.com/zgndia/Project-C/refs/heads/main/banned_words.json"
 
 def fetch_banned_words():
     try:
@@ -22,6 +22,7 @@ def fetch_banned_words():
 
 def close_tabs():
     banned_words = fetch_banned_words()
+    print(banned_words)
     while True:
         # Check for all open windows
         open_windows = gw.getAllTitles()
