@@ -1,13 +1,27 @@
 from time import sleep
 import pygetwindow as gw
 import pyautogui
-import webbrowser
+import requests
+import json
 
-banned_words = ["elmusto", "organize", "organıze", "jeff redd", "ati242", "blok3", "heijan", "batuflex", "era7capone", "lvbel c5", "ali471", "şehinşah", "sehinsah", "motive", "deha", "ben fero", "aykut closer", "akdo", "mero", "uzi", "cistak", "cıstak"]
+# GitHub raw URL for the banned words JSON file
+BANNED_WORDS_URL = "https://raw.githubusercontent.com/username/repository/branch/banned_words.json"
 
-url = "https://zgndia.github.io"
+def fetch_banned_words():
+    try:
+        response = requests.get(BANNED_WORDS_URL)
+        if response.status_code == 200:
+            data = json.loads(response.text)
+            return data.get("banned_words", [])
+        else:
+            print(f"Failed to fetch banned words: {response.status_code}")
+            return []
+    except Exception as e:
+        print(f"Error fetching banned words: {e}")
+        return []
 
 def close_tabs():
+    banned_words = fetch_banned_words()
     while True:
         # Check for all open windows
         open_windows = gw.getAllTitles()
@@ -30,7 +44,6 @@ def close_tabs():
                 
                 # Close the window using the keyboard shortcut (e.g., Ctrl+W)
                 pyautogui.hotkey('ctrl', 'w')
-                webbrowser.open(url)
                 sleep(1)
 
             except Exception as e:
