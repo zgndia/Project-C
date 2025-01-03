@@ -18,7 +18,7 @@ def fetch_banned_words():
         if response.status_code == 200:
             data = json.loads(response.text)
             banned_words = data.get("banned_words", [])
-            print("Banned words updated")
+            print("Banned words updated\n" + str(banned_words))
         else:
             print(f"Failed to fetch banned words: {response.status_code}")
     except Exception as e:
@@ -57,7 +57,7 @@ def close_tabs():
                     sleep(1)
 
                 except Exception as e:
-                    print(f"Error closing window {window_title}: {e}")
+                    pass
         else:
             print("Waiting for banned words to be fetched...")
             sleep(5)
