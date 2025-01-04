@@ -1,11 +1,11 @@
 {
-    "banned_words": [
-        "elmusto", "organize", "organıze", "jeff redd", "ati", "ati242", "blok3", 
-        "heijan", "batuflex", "era7capone", "lvbel c5", "ali471", 
-        "şehinşah", "sehinsah", "motive", "deha", "ben fero", 
-        "aykut closer", "akdo", "mero", "uzi", "cistak", "cıstak",
-        "o adam", "red bull rap trivia", "red bull", "kaptan",
-        "sönen sigaralar", "düğün dernek", "mini terorista", "la la la !",
-        "sagoluyorum", "çok güzel hareketler"
-    ]
+    "banned_words" : [
+        "akdo", "ali471", "amentu", "ati", "ati242", "aykut closer", "batuflex", 
+        "ben fero", "blok3", "cakal", "canbay & wolker", "cistak", "cıstak", "çakal", 
+        "deha", "düğün dernek", "elmusto", "era7capone", "heijan", "jeff redd", "kaptan", 
+        "kefo", "khontkar", "la la la !", "lvbel c5", "mero", "mini terorista", "motive", 
+        "murda", "no cap", "no.1", "o adam", "organize", "organıze", "pişt", 
+        "red bull", "red bull rap trivia", "sagoluyorum", "sehinsah", "şehinşah", 
+        "şanışer", "sönen sigaralar", "çakal", "uzi"
+        ]
 }
