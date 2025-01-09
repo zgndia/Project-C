@@ -10,54 +10,52 @@ BANNED_WORDS_URL = "https://raw.githubusercontent.com/zgndia/Project-C/refs/head
 
 # Global variable to store banned words
 banned_words = []
+lock = threading.Lock()
 
 def fetch_banned_words():
     global banned_words
     try:
-        response = requests.get(BANNED_WORDS_URL)
-        if response.status_code == 200:
+        with lock:  # Use lock to prevent race conditions when updating banned_words
+            response = requests.get(BANNED_WORDS_URL)
+            response.raise_for_status()  # Will raise an HTTPError for bad responses
             data = json.loads(response.text)
             banned_words = data.get("banned_words", [])
-            print("Banned words updated\n" + str(banned_words))
-        else:
-            print(f"Failed to fetch banned words: {response.status_code}")
+            print(f"Banned words updated, {len(banned_words)} words.")
+    except requests.RequestException as e:
+        print(f"Failed to fetch banned words: {e}")
+    except json.JSONDecodeError:
+        print("Failed to decode JSON response from the server")
     except Exception as e:
-        print(f"Error fetching banned words: {e}")
+        print(f"An unexpected error occurred while fetching banned words: {e}")
 
 def update_banned_words():
-    # Update banned words every minute
     while True:
         fetch_banned_words()
         sleep(60)
 
+def close_window(window_title):
+    """Attempt to close a window by its title."""
+    try:
+        window = gw.getWindowsWithTitle(window_title)[0]
+        window.activate()
+        pyautogui.hotkey('ctrl', 'w')
+        sleep(1)  # Wait a bit to give time for the action to process
+    except Exception as e:
+        print(f"Error closing window '{window_title}': {e}")
+
 def close_tabs():
     while True:
         if banned_words:
-            # Check for all open windows
             open_windows = gw.getAllTitles()
-
-            # Initialize a list to store matching windows
             matching_windows = []
 
-            # Check for banned words in open window titles
-            for banned_word in banned_words:
-                for window in open_windows:
-                    if banned_word.lower() in window.lower():
-                        matching_windows.append(window)
+            for window in open_windows:
+                window_lower = window.lower()
+                if any(f' {banned_word.lower()} ' in f' {window_lower} ' for banned_word in banned_words):
+                    matching_windows.append(window)
 
-            # Close all matching windows
             for window_title in matching_windows:
-                try:
-                    # Focus the matching window
-                    window = gw.getWindowsWithTitle(window_title)[0]
-                    window.activate()
-
-                    # Close the window using the keyboard shortcut (e.g., Ctrl+W)
-                    pyautogui.hotkey('ctrl', 'w')
-                    sleep(1)
-
-                except Exception as e:
-                    pass
+                close_window(window_title)
         else:
             print("Waiting for banned words to be fetched...")
             sleep(5)
