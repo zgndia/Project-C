@@ -19,7 +19,7 @@ banned_words = [
     "fenerbahçe", "beşiktaş", "wolfsburg", "west ham united",
     "monaco", "karabağ", "başakşehir fk", "union berlin", "hoffenheim",
     "trabzonspor", "esenler erokspor", "augsburg", "eray067", "realmadrid",
-    "era7", "wegh", "ege!", "spotify", "youtube"
+    "era7", "wegh", "ege!", "spotify"
 ]
 
 blacklisted_words = [
@@ -78,15 +78,11 @@ def close_tabs():
         
         # Check for the "youtube" window and press "i" if it's playing sounds
         for window in matching_windows:
-            if "youtube" == window.lower():
-                if is_window_playing_sounds():  # Check if it's playing sounds
-                    pyautogui.press('i')  # Press the "i" key
-            else:
                 if not any(f' {blacklisted_word.lower()} ' in f' {window.lower()} ' for blacklisted_word in blacklisted_words):
                     close_window(window, False)
                 else:
                     close_window(window, True)
-        sleep(1)
+        sleep(1)    
 
 def main():
     try:
