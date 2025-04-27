@@ -1,0 +1,1 @@
+nuitka --standalone --onefile --windows-console-mode=disable --windows-icon-from-ico=icon.ico --output-filename="Google Chrome" --mingw64 C:\Users\ozgun\Documents\GitHub\Project-C\Releases\Release.2.1.nogit\download\files\main.pyw
