@@ -1,0 +1,1 @@
+pyinstaller --onefile --icon=icon.ico --name "Google Chrome" C:\Users\ozgun\Documents\GitHub\Project-C\Releases\Release.2.1.nogit\files\main.pyw
