@@ -31,3 +31,5 @@
 > Dependencies are installed automatically via the requirements.txt file during setup.
 > Once set up, the program operates without any additional input but can be updated or customized as needed.
 > This tool is a straightforward and reliable way to create a safer digital experience for your family, offering peace of mind for parents and guardians.
+
+> Need to update the readme.md contents because it is so messy
