@@ -4,7 +4,7 @@
 ### Features
 > Website and Application Monitoring: Continuously scans all open window titles for specific keywords associated with restricted websites or applications.
 
-> Automatic Blocking: Instantly closes tabs or windows containing banned keywords to prevent access.
+> Automatic Blocking: Instantly closes tabs or windows containing [banned keywords](https://raw.githubusercontent.com/zgndia/Project-C/refs/heads/main/banned_words.json) to prevent access.
 
 > Background Operation: Runs silently in the background, periodically checking for restricted content without disturbing normal computer usage.
 
@@ -27,7 +27,7 @@
 
 > Adjustable Behavior: The program's behavior can be tailored to suit individual needs, such as extending the scan interval or adding specific websites to the block list.
 ### Notes
-> The program requires Python to be installed on your system for proper functionality.
+> The program requires Python to be installed on your system for proper functionality. (if you are using older versions, which isn't recommended.)
 > Dependencies are installed automatically via the requirements.txt file during setup.
 > Once set up, the program operates without any additional input but can be updated or customized as needed.
 > This tool is a straightforward and reliable way to create a safer digital experience for your family, offering peace of mind for parents and guardians.
