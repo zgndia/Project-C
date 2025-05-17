@@ -198,19 +198,14 @@ def main():
                 # Deduplicated and improved banned words list 
                 BANNED_WORDS = [
                     "ali471", "amentu", "ati242", "aykut closer", "batuflex", 
-                    "ben fero", "blok3", "cakal", "canbay wolker", "cıstak", "cistak", "çakal", 
-                    "deha", "elmusto", "era7capone", "heijan", "jeff redd", "kefo", "khontkar", 
-                    "lvbel c5", "mero", "motive", "murda", "red bull rap trivia", "sehinsah", 
-                    "şehinşah", "şanışer", "uzi", "- youtube music", "spotify -", "- spotify",
-                    "barcelona", "real madrid", "bayern münih", "bayern munich", "manchester united",
-                    "tottenham", "young boys", "rc strasbourg", "chelsea", "arsenal", "porto", "milan",
-                    "juventus", "inter", "valencia", "liverpool", "benfica", "atletico madrid", "sevilla",
-                    "borussia dortmund", "lyon", "manchester city", "galatasaray", "fenerbahçe",
-                    "beşiktaş", "wolfsburg", "west ham united", "monaco", "karabağ", "başakşehir fk",
-                    "union berlin", "hoffenheim", "trabzonspor", "esenler erokspor", "augsburg", "eray067",
-                    "realmadrid", "era7", "wegh", "ege!", "spotify", "ezhel", "organize", "organıze",
-                    "damla", "randevu", "swim", "exorcist", "pvg", "inanma", "teker teker", "makaveli",
-                    "10 mg", "sokaklar caddeler", "canbay", "wolker"
+                    "ben fero", "blok3", "cakal", "canbay wolker", "cıstak",
+                    "cistak", "çakal", "deha", "elmusto", "era7capone", "heijan",
+                    "jeff redd", "kefo", "khontkar", "lvbel c5", "mero", "motive",
+                    "murda", "red bull rap trivia", "sehinsah", "şehinşah", "şanışer",
+                    "uzi", "- youtube music", "spotify -", "- spotify","eray067",
+                    "realmadrid", "era7", "wegh", "ege!", "spotify", "ezhel", "organize",
+                    "organıze", "damla", "randevu", "swim", "exorcist", "pvg", "inanma",
+                    "teker teker", "makaveli", "10 mg", "sokaklar caddeler", "canbay", "wolker"
                 ]
                 x = "nogit, words: {}...".format(', '.join([BANNED_WORDS[i] for i in range(3)]))
 
