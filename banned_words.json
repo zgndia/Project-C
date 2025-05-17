@@ -1,10 +1,12 @@
 {
+    "_comment": "The keywords that are in banned_words are all experimental so that I could test if my program worked. You can clone this repo, and change the keywords to what you desire. (You would also need to change some variables inside the code)",
+    
     "banned_words" : [
         "ali471", "amentu", "ati242", "aykut closer", "batuflex", 
         "ben fero", "blok3", "cakal", "canbay wolker", "cıstak",
         "cistak", "çakal", "deha", "elmusto", "era7capone", "heijan",
         "jeff redd", "kefo", "khontkar", "lvbel c5", "mero", "motive",
-        "murda", "red bull rap trivia", "sehinsah", "şehinşah", "şanışer",
+        "murda", "sehinsah", "şehinşah", "şanışer",
         "uzi", "- youtube music", "spotify -", "- spotify","eray067",
         "realmadrid", "era7", "wegh", "ege!", "spotify", "ezhel", "organize",
         "organıze", "damla", "randevu", "swim", "exorcist", "pvg", "inanma",
